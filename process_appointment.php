@@ -10,8 +10,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $message = "Quiero un turno.";
 
     // Encabezados del correo
-    $headers = "From: no-reply@tu-dominio.com" . "\r\n" .
-               "Reply-To: no-reply@tu-dominio.com" . "\r\n" .
+    $headers = "From: no-reply@jurasoc.github.io" . "\r\n" .
+               "Reply-To: no-reply@jurasoc.github.io" . "\r\n" .
                "X-Mailer: PHP/" . phpversion();
 
     // Enviar el correo
