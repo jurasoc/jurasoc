@@ -225,8 +225,85 @@
     </div>
     <!-- Services End -->
 
+    <!--turnos-->
 
-    <!-- Appointment Start -->
+    <form id="appointment-form">
+        <div class="form-group">
+            <input type="text" id="nombre" class="form-control border-0 p-4" placeholder="Su nombre" required />
+        </div>
+        <div class="form-group">
+            <input type="email" id="email" class="form-control border-0 p-4" placeholder="Tu correo electrónico" required />
+        </div>
+        <div class="form-row">
+            <div class="col-6">
+                <div class="form-group">
+                    <input type="text" id="fecha" class="form-control border-0 p-4" placeholder="Seleccione fecha" required />
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <input type="text" id="hora" class="form-control border-0 p-4" placeholder="Seleccionar hora" required />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <select id="servicio" class="custom-select border-0 px-4" style="height: 47px;">
+                <option selected>Seleccione un servicio</option>
+                <option value="Consulta presencial">Consulta presencial</option>
+                <option value="Consulta online">Consulta online</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <select id="estudio" class="custom-select border-0 px-4" style="height: 47px;">
+                <option selected>Seleccione un Estudio</option>
+                <option value="Estudio Cangallo">Estudio Cangallo</option>
+                <option value="Auto Selección">Auto Selección</option>
+            </select>
+        </div>
+        <div>
+            <button class="btn btn-primary btn-block border-0 py-3" type="submit">Obtener una turno</button>
+        </div>
+    </form>
+    
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      (function() {
+        emailjs.init("YOUR_USER_ID");
+      })();
+    
+      document.getElementById("appointment-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        
+        var nombre = document.getElementById("nombre").value;
+        var email = document.getElementById("email").value;
+        var fecha = document.getElementById("fecha").value;
+        var hora = document.getElementById("hora").value;
+        var servicio = document.getElementById("servicio").value;
+        var estudio = document.getElementById("estudio").value;
+        
+        var templateParams = {
+          from_name: nombre,
+          from_email: email,
+          fecha: fecha,
+          hora: hora,
+          servicio: servicio,
+          estudio: estudio
+        };
+    
+        emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams)
+          .then(function(response) {
+             alert("Correo enviado exitosamente!");
+          }, function(error) {
+             alert("Hubo un error al enviar el correo: " + error.text);
+          });
+      });
+    </script>
+    
+
+    <!--fin turnos-->
+
+
+    <!-- Appointment Start 
     <div class="container-fluid py-5">
         <div class="container py-5">
             <div class="bg-appointment rounded">
@@ -283,7 +360,7 @@
             </div>
         </div>
     </div>
-    <!-- Appointment End -->
+     Appointment End -->
 
 
     <!-- Features Start -->
