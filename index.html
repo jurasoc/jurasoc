@@ -225,157 +225,101 @@
     </div>
     <!-- Services End -->
 
-    <!--turnos-->
+   
 
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="bg-appointment rounded">
-                <div class="row h-100 align-items-center justify-content-center">
-                    <div class="col-lg-6 py-5">
-                        <div class="rounded p-5 my-5" style="background: rgba(55, 55, 63, .7);">
-                            <h1 class="text-center text-white mb-4">Obtener una turno</h1>
+<!-- Appointment Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="bg-appointment rounded">
+            <div class="row h-100 align-items-center justify-content-center">
+                <div class="col-lg-6 py-5">
+                    <div class="rounded p-5 my-5" style="background: rgba(55, 55, 63, .7);">
+                        <h1 class="text-center text-white mb-4">Obtener una turno</h1>
 
-    <form id="appointment-form">
-        <div class="form-group">
-            <input type="text" id="nombre" class="form-control border-0 p-4" placeholder="Su nombre" required />
-        </div>
-        <div class="form-group">
-            <input type="email" id="email" class="form-control border-0 p-4" placeholder="Tu correo electrónico" required />
-        </div>
-        <div class="form-row">
-            <div class="col-6">
-                <div class="form-group">
-                    <input type="text" id="fecha" class="form-control border-0 p-4" placeholder="Seleccione fecha" required />
+                        <form id="appointment-form">
+                            
+                            <div class="form-group">
+                                <input type="text" id="nombre" class="form-control border-0 p-4" placeholder="Su nombre" required="required" />
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" class="form-control border-0 p-4" placeholder="Tu correo electrónico" required="required" />
+                            </div>
+                            <div class="form-row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <div class="date" id="date" data-target-input="nearest">
+                                            <input type="text" id="fecha" class="form-control border-0 p-4 datetimepicker-input" placeholder="Seleccione fecha" data-target="#date" data-toggle="datetimepicker"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <div class="time" id="time" data-target-input="nearest">
+                                            <input type="text" id="hora" class="form-control border-0 p-4 datetimepicker-input" placeholder="Seleccionar hora" data-target="#time" data-toggle="datetimepicker"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <select id="servicio" class="custom-select border-0 px-4" style="height: 47px;">
+                                    <option selected>Seleccione un servicio</option>
+                                    <option value="Consulta presencial">Consulta presencial</option>
+                                    <option value="Consulta online">Consulta online</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select id="estudio" class="custom-select border-0 px-4" style="height: 47px;">
+                                    <option selected>Seleccione un Estudio</option>
+                                    <option value="Estudio Cangallo">Estudio Cangallo</option>
+                                    <option value="Auto Selección">Auto Selección</option>
+                                </select>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary btn-block border-0 py-3" type="submit">Obtener una turno</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-            <div class="col-6">
-                <div class="form-group">
-                    <input type="text" id="hora" class="form-control border-0 p-4" placeholder="Seleccionar hora" required />
-                </div>
-            </div>
         </div>
-        <div class="form-group">
-            <select id="servicio" class="custom-select border-0 px-4" style="height: 47px;">
-                <option selected>Seleccione un servicio</option>
-                <option value="Consulta presencial">Consulta presencial</option>
-                <option value="Consulta online">Consulta online</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <select id="estudio" class="custom-select border-0 px-4" style="height: 47px;">
-                <option selected>Seleccione un Estudio</option>
-                <option value="Estudio Cangallo">Estudio Cangallo</option>
-                <option value="Auto Selección">Auto Selección</option>
-            </select>
-        </div>
-        <div>
-            <button class="btn btn-primary btn-block border-0 py-3" type="submit">Obtener una turno</button>
-        </div>
-    </form>
+    </div>
+</div>
 
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-    
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
-      (function() {
-        emailjs.init("REpkbOIKF-POrFHHm");
-      })();
-    
-      document.getElementById("appointment-form").addEventListener("submit", function(event) {
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+    (function() {
+        emailjs.init("REpkbOIKF-POrFHHm");  // Asegúrate de usar tu User ID
+    })();
+
+    document.getElementById("appointment-form").addEventListener("submit", function(event) {
         event.preventDefault();
-        
+
         var nombre = document.getElementById("nombre").value;
         var email = document.getElementById("email").value;
         var fecha = document.getElementById("fecha").value;
         var hora = document.getElementById("hora").value;
         var servicio = document.getElementById("servicio").value;
         var estudio = document.getElementById("estudio").value;
-        
+
         var templateParams = {
-          from_name: nombre,
-          from_email: email,
-          fecha: fecha,
-          hora: hora,
-          servicio: servicio,
-          estudio: estudio
+            from_name: nombre,
+            from_email: email,
+            fecha: fecha,
+            hora: hora,
+            servicio: servicio,
+            estudio: estudio
         };
-    
+
         emailjs.send("service_vq6hemc", "template_ak00obv", templateParams)
-          .then(function(response) {
-             alert("Correo enviado exitosamente!");
-          }, function(error) {
-             alert("Hubo un error al enviar el correo: " + error.text);
-          });
-      });
-    </script>
-    
+            .then(function(response) {
+                alert("Correo enviado exitosamente!");
+            }, function(error) {
+                alert("Hubo un error al enviar el correo: " + error.text);
+            });
+    });
+</script>
+<!-- Appointment End -->
 
-    <!--fin turnos-->
-
-
-    <!-- Appointment Start 
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="bg-appointment rounded">
-                <div class="row h-100 align-items-center justify-content-center">
-                    <div class="col-lg-6 py-5">
-                        <div class="rounded p-5 my-5" style="background: rgba(55, 55, 63, .7);">
-                            <h1 class="text-center text-white mb-4">Obtener una turno</h1>
-                            
-                                <form action="process_appointment.php" method="POST">
-                                    
-                                <div class="form-group">
-                                    <input type="text" class="form-control border-0 p-4" placeholder="Su nombre" required="required" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control border-0 p-4" placeholder="Tu correo electrónico" required="required" />
-                                </div>
-                                <div class="form-row">
-                                    <div class="col-6">
-                                        <div class="form-group">
-                                            <div class="date" id="date" data-target-input="nearest">
-                                                <input type="text" class="form-control border-0 p-4 datetimepicker-input" placeholder="Seleccione fecha" data-target="#date" data-toggle="datetimepicker"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="form-group">
-                                            <div class="time" id="time" data-target-input="nearest">
-                                                <input type="text" class="form-control border-0 p-4 datetimepicker-input" placeholder="Seleccionar hora" data-target="#time" data-toggle="datetimepicker"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <select class="custom-select border-0 px-4" style="height: 47px;">
-                                        <option selected>Seleccione un servicio</option>
-                                        <option value="1">Consulta presencial</option>
-                                        <option value="2">Consulta online</option>
-                                    </select>
-                                </div>
-                                  <div class="form-group">
-                                    <select class="custom-select border-0 px-4" style="height: 47px;">
-                                        <option selected>Seleccione un Estudio</option>                                        
-                                        <option value="1">Estudio Cangallo</option>                                      
-                                        <option value="2">Auto Selección</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <button class="btn btn-primary btn-block border-0 py-3" type="submit">Obtener una turno</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-     Appointment End -->
 
 
     <!-- Features Start -->
