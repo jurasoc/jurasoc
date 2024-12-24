@@ -227,6 +227,14 @@
 
     <!--turnos-->
 
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="bg-appointment rounded">
+                <div class="row h-100 align-items-center justify-content-center">
+                    <div class="col-lg-6 py-5">
+                        <div class="rounded p-5 my-5" style="background: rgba(55, 55, 63, .7);">
+                            <h1 class="text-center text-white mb-4">Obtener una turno</h1>
+
     <form id="appointment-form">
         <div class="form-group">
             <input type="text" id="nombre" class="form-control border-0 p-4" placeholder="Su nombre" required />
@@ -264,6 +272,13 @@
             <button class="btn btn-primary btn-block border-0 py-3" type="submit">Obtener una turno</button>
         </div>
     </form>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
     
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
@@ -290,7 +305,7 @@
           estudio: estudio
         };
     
-        emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams)
+        emailjs.send("service_vq6hemc", "template_ak00obv", templateParams)
           .then(function(response) {
              alert("Correo enviado exitosamente!");
           }, function(error) {
