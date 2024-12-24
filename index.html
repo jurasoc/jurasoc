@@ -285,17 +285,15 @@
     </div>
 </div>
 
-
 <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-
 <script>
-    (function() {
-        emailjs.init("REpkbOIKF-POrFHHm");  // Asegúrate de usar tu User ID
-    })();
+    // Inicialización de EmailJS con tu USER_ID
+    emailjs.init("REpkbOIKF-POrFHHm"); // Asegúrate de reemplazarlo por tu propio USER_ID
 
     document.getElementById("appointment-form").addEventListener("submit", function(event) {
-        event.preventDefault();
+        event.preventDefault(); // Evita el envío por defecto del formulario
 
+        // Obteniendo los valores de los campos
         var nombre = document.getElementById("nombre").value;
         var email = document.getElementById("email").value;
         var fecha = document.getElementById("fecha").value;
@@ -303,6 +301,7 @@
         var servicio = document.getElementById("servicio").value;
         var estudio = document.getElementById("estudio").value;
 
+        // Parámetros del template que se enviarán a EmailJS
         var templateParams = {
             from_name: nombre,
             from_email: email,
@@ -312,15 +311,19 @@
             estudio: estudio
         };
 
-        emailjs.send("service_vq6hemc", "template_ak00obv", templateParams)
+        // Envío del correo usando el serviceID y templateID correspondientes
+        emailjs.send('service_vq6hemc', 'template_ak00obv', templateParams)
             .then(function(response) {
+                // Si el correo se envió con éxito
                 alert("Correo enviado exitosamente!");
             }, function(error) {
+                // Si ocurrió un error en el envío
                 alert("Hubo un error al enviar el correo: " + error.text);
             });
     });
 </script>
 <!-- Appointment End -->
+
 
 
 
