@@ -85,9 +85,10 @@
                                 <div class="dropdown-menu rounded-0 m-0">
                                     <a href="https://gobiernodigital.chaco.gob.ar/" target="_blank" class="dropdown-item">Tu Gobierno Dgital Chaco</a>
                                     <a href="https://www.justiciachaco.gov.ar/" target="_blank" class="dropdown-item">Justicia Chaco</a>
-                                    <a href="https://www.pjn.gov.ar/" target="_blank" class="dropdown-item">Justicia Nación</a>
-                                    <a href="https://www.argentina.gob.ar/trabajo/seguridadsocial/ripte" target="_blank" class="dropdown-item">Tabla RIPTE</a>
-                                    <a href="#" target="_blank" class="dropdown-item">Sistema JURASOC</a>
+                                    <a href="https://controldetramites.justiciachaco.gov.ar/login.aspx?ReturnUrl=%2fDefault.aspx&AspxAutoDetectCookieSupport=1" target="_blank" class="dropdown-item">Contrl de trámites</a>
+                                    <a href="https://sigiprofesionales.justiciachaco.gov.ar/Login.aspx?ReturnUrl=%2f" target="_blank" class="dropdown-item">SIGI Control Penal</a>
+                                    <a href="https://www.justiciachaco.gov.ar/index.php?action=indi" target="_blank" class="dropdown-item">INDI Ingreso de Escritos</a>
+                                    <a href="https://www.justiciachaco.gov.ar/index.php?action=iure" target="_blank" class="dropdown-item">S-IURE Ingreso de Demandas</a>
                                 </div>
                             </div>
                             <a href="contact.html" class="nav-item nav-link">Contacto</a>
@@ -143,53 +144,50 @@
                 <div class="row h-100 align-items-center justify-content-center">
                     <div class="col-lg-6 py-5">
                         <div class="rounded p-5 my-5" style="background: rgba(55, 55, 63, .7);">
-                            <h1 class="text-center text-white mb-4">Obtener una cita</h1>
-                            <form>
-                                <div class="form-group">
-                                    <input type="text" class="form-control border-0 p-4" placeholder="Su nombre" required="required" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control border-0 p-4" placeholder="Tu correo electrónico" required="required" />
-                                </div>
-                                <div class="form-row">
-                                    <div class="col-6">
-                                        <div class="form-group">
-                                            <div class="date" id="date" data-target-input="nearest">
-                                                <input type="text" class="form-control border-0 p-4 datetimepicker-input" placeholder="Seleccione fecha" data-target="#date" data-toggle="datetimepicker"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="form-group">
-                                            <div class="time" id="time" data-target-input="nearest">
-                                                <input type="text" class="form-control border-0 p-4 datetimepicker-input" placeholder="Seleccionar hora" data-target="#time" data-toggle="datetimepicker"/>
-                                            </div>
+                            <h1 class="text-center text-white mb-4">OBTENER UNA CONSULTA AL <br> <br>+5493624879520<br><br>HORARIOS DE ATENCIÓN PRESENCIAL Y/O ONLINE<br><br>16:00 a 21:00 HORAS</h1>
+
+                        <!--<form id="appointment-form">
+                            
+                            <div class="form-group">
+                                <input type="text" id="nombre" class="form-control border-0 p-4" placeholder="Su nombre" required="required" />
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" class="form-control border-0 p-4" placeholder="Tu correo electrónico" required="required" />
+                            </div>
+                            <div class="form-row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <div class="date" id="date" data-target-input="nearest">
+                                            <input type="text" id="fecha" class="form-control border-0 p-4 datetimepicker-input" placeholder="Seleccione fecha" data-target="#date" data-toggle="datetimepicker"/>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <select class="custom-select border-0 px-4" style="height: 47px;">
-                                        <option selected>Seleccione un servicio</option>
-                                        <option value="1">Consulta presencial</option>
-                                        <option value="2">Consulta online</option>
-                                    </select>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <div class="time" id="time" data-target-input="nearest">
+                                            <input type="text" id="hora" class="form-control border-0 p-4 datetimepicker-input" placeholder="Seleccionar hora" data-target="#time" data-toggle="datetimepicker"/>
+                                        </div>
+                                    </div>
                                 </div>
-                                  <div class="form-group">
-                                    <select class="custom-select border-0 px-4" style="height: 47px;">
-                                        <option selected>Seleccione un Estudio</option>
-                                        <option value="1">Estudio Funes</option>
-                                        <option value="2">Estudio Gonzalez</option>
-                                        <option value="2">Estudio Samaniego</option>
-                                        <option value="2">Estudio Aguilar Trejos</option>
-                                        <option value="2">Estudio Godoy</option>
-                                        <option value="2">Estudio Suarez</option>
-                                        <option value="2">Auto Selección</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <button class="btn btn-primary btn-block border-0 py-3" type="submit">Obtener una cita</button>
-                                </div>
-                            </form>
+                            </div>
+                            <div class="form-group">
+                                <select id="servicio" class="custom-select border-0 px-4" style="height: 47px;">
+                                    <option selected>Seleccione un servicio</option>
+                                    <option value="Consulta presencial">Consulta presencial</option>
+                                    <option value="Consulta online">Consulta online</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select id="estudio" class="custom-select border-0 px-4" style="height: 47px;">
+                                    <option selected>Seleccione un Estudio</option>
+                                    <option value="Estudio Cangallo">Estudio Cangallo</option>
+                                    <option value="Auto Selección">Auto Selección</option>
+                                </select>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary btn-block border-0 py-3" type="submit">Obtener una turno</button>
+                            </div>
+                        </form>-->
                         </div>
                     </div>
                 </div>
@@ -297,15 +295,15 @@ a:hover .mensaje {
   });
 </script>
 
-   <!-- Footer Start -->
-    <div class="container-fluid bg-secondary text-white pt-5 px-sm-3 px-md-5" style="margin-top: 90px;">
+      <!-- Footer Start -->
+      <div class="container-fluid bg-secondary text-white pt-5 px-sm-3 px-md-5" style="margin-top: 90px;">
         <div class="row mt-5">
             <div class="col-lg-4">
                 <div class="d-flex justify-content-lg-center p-4" style="background: rgba(256, 256, 256, .05);">
                     <i class="fa fa-2x fa-map-marker-alt text-primary"></i>
                     <div class="ml-3">
                         <h5 class="text-white">Nuestra Oficina</h5>
-                        <p class="m-0">Calle Remedios de Escalada N° 48 Primer Piso Oficina 2</p>
+                        <p class="m-0">Calle Cangallo N° 288</p>
                     </div>
                 </div>
             </div>
@@ -334,11 +332,11 @@ a:hover .mensaje {
                     <h1 class="m-0 mt-n2 display-4 text-primary text-uppercase">JURASOC</h1>
                    
                 </a>
-                <p>JURISTAS | ASOCIADOS es una plataforma digital colaborativa que reúne a diversos estudios jurídicos argentinos para ofrecer una amplia gama de servicios legales</p>
+                <p>JURISTAS | GitHub.IO es un sitio web informativo que reúne a juristas asociados y ofrece una amplia gama de servicios legales de manera integral, adaptados a las necesidades de cada cliente</p>
                 <div class="d-flex justify-content-start mt-4">
-                    <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                    <!--<a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-twitter"></i></a>-->
                     <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <!--<a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>-->
                     <a class="btn btn-lg btn-outline-light btn-lg-square" href="#"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
@@ -359,18 +357,18 @@ a:hover .mensaje {
                     <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Preguntas frecuentes</a>
                     <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Ayuda</a>
                     <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Terminos</a>
-                    </div>
+               </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
                 <h4 class="font-weight-semi-bold text-primary mb-4">Boletín informativo</h4>
-                <p>Esta red de expertos permitiría a los clientes acceder a asesoramiento especializado y representación en diferentes áreas del derecho.</p>
+                <p>Abogados profesional ofrece a los clientes acceso a asesoramiento especializado y representación legal en múltiples áreas del derecho</p>
                 <div class="w-100">
-                    <div class="input-group">
+                    <!--<div class="input-group">
                         <input type="text" class="form-control border-0" style="padding: 25px;" placeholder="Tu correo">
                         <div class="input-group-append">
                             <button class="btn btn-primary px-4">Suscribir</button>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </div>
@@ -384,7 +382,6 @@ a:hover .mensaje {
         </div>
     </div>
     <!-- Footer End -->
-
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary px-3 back-to-top"><i class="fa fa-angle-double-up"></i></a>
